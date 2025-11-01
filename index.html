@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS Multiple-choice Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MOS Multiple-choice Test</h1>
+        </header>
+
+        <main>
+            <!-- Data Management Section -->
+            <section id="data-management">
+                <h2>Manage Question Data</h2>
+                <p>Paste your formatted questions below, or import them from a JSON file. The current bank has <strong id="question-count">0</strong> questions.</p>
+                <textarea id="data-input" rows="10" placeholder="1. Question text...&#10; Incorrect option&#10; Correct option"></textarea>
+                <div class="button-group">
+                    <button id="process-btn">Extract & Add Questions</button>
+                    <button id="view-edit-btn">View/Edit Saved Questions</button>
+                    <button id="clear-storage-btn">Clear All Saved Questions</button>
+                    <!-- New Import/Export Buttons -->
+                    <button id="import-json-btn">Import from JSON</button>
+                    <input type="file" id="json-file-input" class="hidden" accept=".json">
+                    <button id="export-json-btn">Export to JSON</button>
+                </div>
+            </section>
+
+            <!-- Test Section -->
+            <section id="test-generation">
+                <h2>Take the Test</h2>
+                <p>Click below to start a randomized test with up to 60 questions.</p>
+                <button id="start-test-btn">Start New Test</button>
+            </section>
+
+            <!-- Test Display Area -->
+            <section id="test-area" class="hidden">
+                <div id="question-container">
+                    <!-- Questions will be injected here by JavaScript -->
+                </div>
+                <button id="submit-test-btn">Submit Test</button>
+            </section>
+
+            <!-- Results Display Area -->
+            <section id="results-area" class="hidden">
+                <h2>Test Results</h2>
+                <p>Your Score: <strong id="score"></strong></p>
+                <div id="review-container">
+                    <!-- Review of answers will be injected here -->
+                </div>
+                <button id="retake-test-btn">Take Another Test</button>
+            </section>
+            
+            <!-- View/Edit Questions Area -->
+            <section id="view-edit-area" class="hidden">
+                <h2>Edit Saved Questions</h2>
+                <div id="questions-list-container">
+                    <!-- Editable questions will be injected here by JavaScript -->
+                </div>
+                <button id="back-to-main-btn">Back to Main</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
